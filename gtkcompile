@@ -1,0 +1,12 @@
+rm *.o
+
+gtk-builder-convert wepgui.glade wepgui.xml
+
+g++ -I/usr/include -I/usr/local/include -L/usr/local/lib -L/usr/lib  -lpcap -c wbfpcap.c -o wbfpcap.o
+
+g++ -I/usr/include -I/usr/local/include -L/usr/local/lib -L/usr/lib  -lssl -c wbfwep.c -o wbfwep.o
+
+g++ -I/usr/include -I/usr/local/include -L/usr/local/lib -L/usr/lib  -lsqlite3 wbfwep.o -c wbfsqlite3.c -o wbfsqlite3.o
+
+g++ -I/usr/include -I/usr/local/include -L/usr/local/lib -L/usr/lib -lpcap -lssl -lsqlite3 wbfwep.o wbfsqlite3.o wbfpcap.o -Wall -g -o wepgui wepgui.c `pkg-config --cflags --libs gtk+-2.0` -export-dynamic
+

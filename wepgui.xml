@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!--Generated with glade3 3.4.5 on Tue Jul 27 15:09:32 2010 -->
+<interface>
+  <object class="GtkUIManager" id="uimanager1">
+    <child>
+      <object class="GtkActionGroup" id="actiongroup1">
+        <child>
+          <object class="GtkAction" id="menuitem1">
+            <property name="name">menuitem1</property>
+            <property name="label" translatable="yes">_File</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="toolfileopen">
+            <property name="stock_id" translatable="yes">gtk-open</property>
+            <property name="name">toolfileopen</property>
+            <signal handler="on_toolfileopen_activate" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="toolfileclose">
+            <property name="stock_id" translatable="yes">gtk-close</property>
+            <property name="name">toolfileclose</property>
+            <signal handler="on_toolfileclose_activate" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="toolfilequit">
+            <property name="stock_id" translatable="yes">gtk-quit</property>
+            <property name="name">toolfilequit</property>
+            <signal handler="on_toolfilequit_activate" name="activate"/>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="menuitem4">
+            <property name="name">menuitem4</property>
+            <property name="label" translatable="yes">_Help</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkAction" id="imagemenuitem10">
+            <property name="stock_id" translatable="yes">gtk-about</property>
+            <property name="name">imagemenuitem10</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <ui>
+      <menubar name="mainmenubar">
+        <menu action="menuitem1">
+          <menuitem action="toolfileopen"/>
+          <menuitem action="toolfileclose"/>
+          <separator/>
+          <menuitem action="toolfilequit"/>
+        </menu>
+        <menu action="menuitem4">
+          <menuitem action="imagemenuitem10"/>
+        </menu>
+      </menubar>
+    </ui>
+  </object>
+  <object class="GtkWindow" id="main">
+    <property name="title" translatable="yes">WepBruteForceServer</property>
+    <property name="window_position">GTK_WIN_POS_CENTER</property>
+    <property name="default_width">640</property>
+    <property name="default_height">400</property>
+    <child>
+      <object class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <child>
+          <object class="GtkMenuBar" constructor="uimanager1" id="mainmenubar">
+            <property name="visible">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+            <property name="vscrollbar_policy">GTK_POLICY_AUTOMATIC</property>
+            <child>
+              <object class="GtkTreeView" id="aptree">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="headers_clickable">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStatusbar" id="mainstatusbar">
+            <property name="visible">True</property>
+            <property name="spacing">2</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
