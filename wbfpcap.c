@@ -288,6 +288,11 @@ if(packet_len > 0)
 									smallAParray[ctr]-> wpa_flag = 1;
 									smallAParray[ctr]-> wep_flag = 0;
 								}
+								if(wpa_check == 0x0050F204)//WPS
+								{
+                                                                        smallAParray[ctr]-> wpa_flag = 1;
+                                                                        smallAParray[ctr]-> wep_flag = 0;
+								}
 								off = off + vndr_size;
 							}
 							else
